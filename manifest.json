@@ -1,0 +1,22 @@
+{
+    "name": "Hello world",
+    "description": "display basic msg",
+    "version": "1.0",
+    "manifest_version": 3,
+    "author": "Souhail Youssef",
+    "permissions": ["activeTab", "scripting"],  
+    "content_scripts": [
+        {
+        "matches": ["<all_urls>"],
+        "js": ["script.js"],
+        "run_at": "document_idle"
+    }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    }
+}
