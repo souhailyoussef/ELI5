@@ -1,10 +1,10 @@
 {
-    "name": "Hello world",
-    "description": "display basic msg",
+    "name": "ELI5",
+    "description": "Simplify complex text on any webpage using AI-powered explanations tailored to various understanding levels",
     "version": "1.0",
     "manifest_version": 3,
     "author": "Souhail Youssef",
-    "permissions": ["activeTab", "scripting"],  
+    "permissions": ["activeTab", "scripting", "tabs"],  
     "content_scripts": [
         {
         "matches": ["<all_urls>"],
@@ -17,6 +17,6 @@
     },
     "action": {
         "default_popup": "index.html",
-        "default_icon": "icon.png"
+        "default_icon": "resources/emoji.png"
     }
 }

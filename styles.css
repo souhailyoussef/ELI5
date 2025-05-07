@@ -7,53 +7,190 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
-    border-radius: 2rem;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
 }
 
 #container {
-    padding: 1rem;
+    padding: 10px;
     background-color: white;
     width: 300px;
     height:500px;
+    display: flex;
+    flex-direction: column;
 }
 
-#container h1 {
-    text-align: center;
-    padding: 1rem;
-    color: royalblue;
-}
-
-#selection {
+.banner {
     width:100%;
-    padding: 7px 10px;
-    min-height: 300px;
-    border: 2px solid royalblue;
-    border-radius: 5px;
+    margin: 0;
+    background: royalblue;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
 }
 
-#selection:focus {
-    outline: none;
+.banner h1 {
+    text-align: center;
+    color: white;
+    margin-left: 20px;
 }
 
-.wrapper {
+.avatar {
+    height:50px;
+    width:50px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.avatar.mini {
+    height: 30px;
+    width: 30px;
+    border: 1px solid royalblue;
+    border-radius: 50%;
+}
+
+
+
+.eli-level-container {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.eli-level-container .label {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.eli-level-container .eli-levels {
     display: flex;
     width :100%;
     gap: 10px;
     justify-content: center;
 }
 
-.wrapper .model {
-    height: 50px;
-    width: 50px;
+.eli-level-container .eli-button {
+    height: 30px;
+    width: 70px;
     aspect-ratio: 1;
     list-style-type: none;
     cursor: pointer;
+    border: 1px solid royalblue;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    color: royalblue;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    text-transform: uppercase;
 }
 
-.wrapper .model img {
+.eli-level-container .eli-button.selected {
+    background: royalblue;
+    color: white;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.eli-level-container .eli-button img{
     border-radius: 50%;
     object-fit: contain;
     height: inherit;
     width: inherit;
 }
+.form {
+    display: flex;
+    margin-top: auto;
+    border: 2px solid royalblue;
+    border-radius: 5px;
+    height: 75px;
+    width:100%;
+    padding: 7px 10px;
+    cursor: pointer;
+    overflow-y: auto;
+
+}
+
+#selection {
+    resize: none;
+    outline: none;
+    border:none;
+    flex: 1;
+    margin-right: 5px;
+}
+
+#selection:focus {
+    outline: none;
+}
+
+.form .btn {
+    margin: auto;
+    height: 30px;
+    width: 30px;
+}
+
+.response-container {
+    width:100%;
+    flex: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 7px 10px;
+    max-height:250px;
+    overflow-y: auto;
+
+}
+
+#response {
+    /** opacity: 0; **/
+    /** animation: fade 1s ease-in; **/
+    color: black;
+}
+
+.skeleton {
+    background: #e0e0e0;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skeleton.line {
+    margin: 10px 0;
+    height: 25px;
+    width: 100%;
+  }
+
+  .skeleton::after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:-150px;
+    height:100%;
+    width:150px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    animation: shimmer 1.5s infinite;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  @keyframes shimmer {
+    0% {
+        left: -150px;
+    }
+    100% {
+        left:100%;
+    }
+  }
+
+  @keyframes fade {
+    100% {
+        opacity: 1;
+    }
+}
+  
